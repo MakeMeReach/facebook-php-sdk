@@ -957,7 +957,7 @@ abstract class BaseFacebook
     $opts = self::$CURL_OPTS;
     if ($this->getFileUploadSupport()) {
       $opts[CURLOPT_POSTFIELDS] = $params;
-      if (defined(CURLOPT_SAFE_UPLOAD))
+      if (defined('CURLOPT_SAFE_UPLOAD'))
         curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
     } else {
       $opts[CURLOPT_POSTFIELDS] = http_build_query($params, null, '&');
